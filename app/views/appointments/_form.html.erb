@@ -14,11 +14,13 @@
   <div class="field">
     <%= form.label :patient_id %>
     <%= form.number_field :patient_id %>
+    <%= form.collection_select(:patient_id, Patient.all, :id, :last_name, {}) %>
   </div>
 
   <div class="field">
     <%= form.label :doctor_id %>
     <%= form.number_field :doctor_id %>
+    <%= form.collection_select(:doctor_id, Doctor.all, :id, :last_name, {}) %>
   </div>
 
   <div class="field">
