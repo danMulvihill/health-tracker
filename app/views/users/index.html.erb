@@ -1,4 +1,7 @@
 <% if current_user %>
 <h3>Welcome, user #<%= current_user.id %></h3>
+<% else %>
+
+ <p><%= image_tag("doctors_know.jpg", alt: "Doctor's know their patients") %></p>
 
 <% end %>
