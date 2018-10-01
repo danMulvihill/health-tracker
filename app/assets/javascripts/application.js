@@ -33,3 +33,5 @@ $(document).ready(function(){
     setTimeout(autoplay, 4500);
 }
 autoplay()      
+
+

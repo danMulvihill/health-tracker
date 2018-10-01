@@ -31,4 +31,5 @@
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Delete', @patient, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'List of Patients', patients_path %>
