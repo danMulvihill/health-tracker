@@ -1,6 +1,8 @@
-<h1>Editing Appointment</h1>
+<h1>Edit Appointment</h1>
 
 <%= render 'form', appointment: @appointment %>
 
 <%= link_to 'Show', @appointment %> |
-<%= link_to 'Back', appointments_path %>
+<td><%= link_to 'X', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
+      
+<%= link_to 'List of appointments', appointments_path %>

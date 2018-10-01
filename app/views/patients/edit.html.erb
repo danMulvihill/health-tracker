@@ -1,6 +1,7 @@
-<h1>Editing Patient</h1>
+<h1>Edit Patient Information</h1>
 
 <%= render 'form', patient: @patient %>
 
 <%= link_to 'Show', @patient %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Delete', @patient, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'List of Patients', patients_path %>
