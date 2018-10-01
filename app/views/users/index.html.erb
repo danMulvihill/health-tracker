@@ -2,6 +2,12 @@
 <h3>Welcome, user #<%= current_user.id %></h3>
 <% else %>
 
- <p><%= image_tag("doctors_know.jpg", alt: "Doctor's know their patients") %></p>
+
+<div class="carousel">
+    <div class="carousel-item"><%= image_tag("carouselimage1.jpg") %></div>
+    <div class="carousel-item"><%= image_tag("carouselimage2.jpg") %></div>
+    <div class="carousel-item"><%= image_tag("carouselimage3.jpg") %></div>
+    <div class="carousel-item"><%= image_tag("doctors_know.jpg") %></div>
+  </div>
 
 <% end %>

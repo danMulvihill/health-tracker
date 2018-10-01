@@ -15,3 +15,19 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize
+
+
+$(document).ready(function(){
+    $('.carousel').carousel(
+        {
+            duration: 100,
+        }
+    );
+  });
+
+   
+    function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 4500);
+}
+autoplay()      
