@@ -2,13 +2,11 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments
-  # GET /appointments.json
   def index
     @appointments = Appointment.all
   end
 
   # GET /appointments/1
-  # GET /appointments/1.json
   def show
   end
 
@@ -22,43 +20,29 @@ class AppointmentsController < ApplicationController
   end
 
   # POST /appointments
-  # POST /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
-
-    respond_to do |format|
       if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
+        redirect_to @appointment, notice: 'Appointment made.' 
       else
-        format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
   end
 
   # PATCH/PUT /appointments/1
-  # PATCH/PUT /appointments/1.json
   def update
-    respond_to do |format|
       if @appointment.update(appointment_params)
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @appointment }
+        redirect_to @appointment, notice: 'Appointment changed.' 
+ 
       else
-        format.html { render :edit }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /appointments/1
-  # DELETE /appointments/1.json
   def destroy
     @appointment.destroy
-    respond_to do |format|
-      format.html { redirect_to appointments_url, notice: 'Appointment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to appointments_url, notice: 'Appointment cancelled.'
   end
 
   private
