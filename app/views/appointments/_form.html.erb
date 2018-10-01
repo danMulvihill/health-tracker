@@ -24,8 +24,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :appt,placeholder: "yyyy/mm/dd/hour" %>
-    <%= form.datetime_field :appt %>
+    <%= form.label :appt %>
+    <%= form.text_field :appt, {placeholder: 'Select Date', :class => "datepicker"} %>
+    <%= form.text_field :appt, {placeholder: 'Select Time', :class => "timepicker"}%>
   </div>
 
   <div class="field">

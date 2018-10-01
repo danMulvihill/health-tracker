@@ -23,6 +23,8 @@ $(document).ready(function(){
             duration: 100,
         }
     );
+    $('.datepicker').datepicker();
+    $('.timepicker').timepicker();
   });
 
    
