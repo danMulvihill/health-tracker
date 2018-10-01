@@ -23,7 +23,8 @@ $(document).ready(function(){
             duration: 100,
         }
     );
-    $('.datepicker').datepicker();
+    // materialize date picker
+    $('.datepicker').datepicker(); 
     $('.timepicker').timepicker();
   });
 
