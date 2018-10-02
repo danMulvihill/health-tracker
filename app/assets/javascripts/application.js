@@ -16,6 +16,12 @@
 //= require_tree .
 //= require materialize
 
+// materialize date picker
+
+document.addEventListener("turbolinks:load", function() {
+    $('.timepicker').timepicker();
+    $('.datepicker').datepicker(); 
+  })
 
 $(document).ready(function(){
     $('.carousel').carousel(
@@ -23,12 +29,10 @@ $(document).ready(function(){
             duration: 100,
         }
     );
-    // materialize date picker
-    $('.datepicker').datepicker(); 
-    $('.timepicker').timepicker();
+    
   });
 
-   
+  
     function autoplay() {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 4500);
