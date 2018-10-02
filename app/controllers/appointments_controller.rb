@@ -5,6 +5,7 @@ class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.all
     @doctors = Doctor.all
+    @patients = Patient.all
   end
 
   # GET /appointments/1
@@ -47,7 +48,7 @@ class AppointmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # # Use callbacks to share common setup or constraints between actions.
     def set_appointment
       @appointment = Appointment.find(params[:id])
     end
