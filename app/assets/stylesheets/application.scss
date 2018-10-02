@@ -24,3 +24,12 @@
  select {
      display: block;
  }
+
+.patients_form select {
+    width: 31%;
+    display: inline-grid;
+}
+
+#appointment_appt {
+    width: 47% !important;
+}

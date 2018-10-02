@@ -10,19 +10,19 @@
       </ul>
     </div>
   <% end %>
-
+<div class="appointment_form">
   <div class="field">
     <%= form.label :patient_id %>
-    <%= form.collection_select(:patient_id, Patient.all, :id, :last_name, {}) %>
+    <%= form.collection_select(:patient_id, Patient.all, :id, :last_name, {}) %><br/>
   </div>
 
   <div class="field">
     <%= form.label :doctor_id %>
-    <%= form.collection_select(:doctor_id, Doctor.all, :id, :last_name, {}) %>
+    <%= form.collection_select(:doctor_id, Doctor.all, :id, :last_name, {}) %><br/>
   </div>
 
   <div class="field">
-    <%= form.label :appt %>
+    <%= form.label :appt %><br/>
     <%= form.text_field :appt, {placeholder: 'Select Date', :class => "datepicker"} %>
     <%= form.text_field :appt, {placeholder: 'Select Time', :class => "timepicker"}%>
   </div>
@@ -30,9 +30,10 @@
   <div class="field">
     <%= form.label :details %>
     <%= form.text_area :details %>
-  </div>
+  </div><br/>
 
   <div class="actions">
     <%= form.submit %>
-  </div>
+  </div><br/>
+</div>  
 <% end %>
