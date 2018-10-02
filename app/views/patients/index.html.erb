@@ -17,7 +17,7 @@
       <tr>
         <td><%= patient.last_name %></td>
         <td><%= patient.first_name %></td>
-        <td><%= patient.phone %></td>
+        <td><%= number_to_phone(patient.phone) %></td>
         <td><%= link_to 'Details', patient %></td>
       </tr>
     <% end %>
