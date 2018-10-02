@@ -3,6 +3,6 @@
 <%= render 'form', appointment: @appointment %>
 
 <%= link_to 'Show', @appointment %> |
-<td><%= link_to 'X', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
+<td><%= link_to 'X', @appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td> |
       
 <%= link_to 'List of appointments', appointments_path %>
