@@ -29,8 +29,8 @@
 
   <div class="field">
     <%= form.label :details %>
-    <p>Type aliment code here for more info</p>
-    <%= form.text_area :details %>
+    <span> (Aliment code)</span>
+    <%= form.number_field :details %>
 
    
   </div><br/>
@@ -63,16 +63,17 @@
             let parsedData = JSON.parse(JSON.stringify(data));
             console.log(parsedData.feed)
 
-            let playground = document.querySelector("#playground");
-            playground.innerHTML = "<div>";
-            //playground.innerHTML = "<a href='"+parsedData.feed.author.url._value+"'>"
-            playground.innerHTML += parsedData.feed.author.name._value
-            playground.innerHTML += "</div>";
+            let pg = document.querySelector("#playground");
+
+            pg.innerHTML = "";
             for(let i = 0; i<parsedData.feed.entry.length;i++){
-              playground.innerHTML += "<div><h3>"+parsedData.feed.entry[i].title._value+"</h3>";
-              playground.innerHTML += parsedData.feed.entry[i].summary._value+"</p>"
+              pg.innerHTML += "<div><h3>"+parsedData.feed.entry[i].title._value+"</h3>";
+              pg.innerHTML += parsedData.feed.entry[i].summary._value+"</p>"
             }
-      
+            pg.innerHTML += "<div>Data source from: <br>";
+            //pg.innerHTML = "<a href='"+parsedData.feed.author.url._value+"'>"
+            pg.innerHTML += parsedData.feed.author.name._value
+            pg.innerHTML += "</div><br><br>";
 
             }) 
     })
