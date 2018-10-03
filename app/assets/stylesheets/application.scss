@@ -34,6 +34,7 @@
     width: 47% !important;
 }
 
+
 .nav-wrapper{
     margin-left: 20px;
 }
@@ -62,4 +63,14 @@
 
 #symp{
     background: pink;
+
+body {
+    background:linear-gradient(to right, #e4efe9, #f5f7fa);
+    // background:linear-gradient(to bottom right, #89f7fe, #f5f7fa , #ff7eb3);
+    //uncomment above for my preferred colors
+}
+
+nav {
+    background:linear-gradient(to right, #eb3349 ,#f45c43);
+
 }
