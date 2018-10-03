@@ -1,5 +1,6 @@
 <% if current_user %>
 <h3>Welcome <%= current_user.email %></h3>
+ <li><%= link_to "Edit Account", edit_user_registration_path %></li>
 <% else %>
 
 
