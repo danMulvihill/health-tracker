@@ -33,3 +33,33 @@
 #appointment_appt {
     width: 47% !important;
 }
+
+.nav-wrapper{
+    margin-left: 20px;
+}
+
+.container a{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 2px;
+    color: white;
+    background: rgb(50, 189, 199);
+}
+
+.container a:hover{
+    background: #777;
+}
+
+#playground{
+    background: #ddf;
+    padding: 5px;
+
+    a{
+        background: #999;
+    }
+}
+
+#symp{
+    background: pink;
+}
