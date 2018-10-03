@@ -1,5 +1,7 @@
 <% if current_user %>
 <h3>Welcome <%= current_user.email %></h3>
+<p><%= image_tag("greet.jpg", alt: "greetings") %></p>
+
  <li><%= link_to "Edit Account", edit_user_registration_path %></li>
 <% else %>
 
