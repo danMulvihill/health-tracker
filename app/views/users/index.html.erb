@@ -1,11 +1,12 @@
 <% if current_user %>
 <h3>Welcome <%= current_user.email %></h3>
- <li><%= link_to "Edit Account", edit_user_registration_path %></li>
- <li><a href="#terms" class="modal-trigger">&#128214; Medical condition terms and research</a></li>
-
-
-<p><%= image_tag("greet.jpg", alt: "greetings") %></p>
-
+<div style="display:flex; justify-content:space-around">
+ <div><%= link_to "Edit Account", edit_user_registration_path %></div>
+ <div><a href="#terms" class="modal-trigger">&#128214; Look it up</a></div>
+</div>
+<div class="log-photo">
+ <%= image_tag("greet.jpg", alt: "greetings") %>
+</div>
 
 <div class="modal" id="terms">
   <div class="container" style="padding-bottom: 15px">
