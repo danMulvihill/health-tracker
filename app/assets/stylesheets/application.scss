@@ -16,9 +16,11 @@
  @import "materialize";
 
 .carousel .carousel-item {
-    height: 800px;
-    width: 800px;
-    padding-top: 230px;
+    height: 830px;
+    width: 1050px;
+    // padding-top: 330px;
+    margin-top: 230px;
+    
  }
 
  select {
@@ -34,6 +36,37 @@
     width: 47% !important;
 }
 
+
+.nav-wrapper{
+    margin-left: 20px;
+}
+
+.container a{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 2px;
+    color: white;
+    background: rgb(50, 189, 199);
+}
+
+.container a:hover{
+    background: #777;
+}
+
+#playground{
+    background: #ddf;
+    padding: 5px;
+
+    a{
+        background: #999;
+    }
+}
+
+#symp{
+    background: pink;
+}
+
 body {
     background:linear-gradient(to right, #e4efe9, #f5f7fa);
     // background:linear-gradient(to bottom right, #89f7fe, #f5f7fa , #ff7eb3);
@@ -42,4 +75,24 @@ body {
 
 nav {
     background:linear-gradient(to right, #eb3349 ,#f45c43);
+
+}
+
+.log-photo{
+    margin: 25px auto;
+    width: 50%;
+    max-width: 500px;
+    img{
+        width: 100%;
+    }
+}
+
+#terms h2, #terms p, #terms ul{
+    padding: 20px;
+}
+
+
+
+.patients_form select {
+    width: 30%;
 }

@@ -1,14 +1,31 @@
 <% if current_user %>
 <h3>Welcome <%= current_user.email %></h3>
- <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+<div style="display:flex; justify-content:space-around">
+ <div><%= link_to "Edit Account", edit_user_registration_path %></div>
+ <div><a href="#terms" class="modal-trigger">&#128214; Look it up</a></div>
+</div>
+<div class="log-photo">
+ <%= image_tag("greet.jpg", alt: "greetings") %>
+</div>
+
+<div class="modal" id="terms">
+  <div class="container" style="padding: 20px;">
+    <label for="search"></label>
+    <input type='text' id="search-text" name= "search">
+    <input type="button" id="search" value="search">
+  </div>
+</div>
+
+
 <% else %>
 
 
 <div class="carousel">
-    <div class="carousel-item"><%= image_tag("carouselimage1.jpg") %></div>
-    <div class="carousel-item"><%= image_tag("carouselimage2.jpg") %></div>
-    <div class="carousel-item"><%= image_tag("carouselimage3.jpg") %></div>
     <div class="carousel-item"><%= image_tag("doctors_know.jpg") %></div>
+    <div class="carousel-item"><%= image_tag("medimage1.jpeg") %></div>
+    <div class="carousel-item"><%= image_tag("carouselimage3.jpg") %></div>
+    <div class="carousel-item"><%= image_tag("carouselimage2.jpg") %></div>
+    
   </div>
 
 <% end %>

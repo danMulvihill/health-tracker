@@ -17,9 +17,9 @@
     <% @appointments.each do |appointment| %>
       <tr>
       
-        <td><%= appointment.patient.last_name %></td>
+        <td><%= appointment.patient.first_name%> <%=appointment.patient.last_name%></td>
         <td>Dr. <%= appointment.doctor.last_name %></td>
-        <td><%= appointment.appt %></td>
+        <td><%= appointment.appt.strftime("%m/%d/%Y %I:%M%p") %></td>
         <td><%= link_to 'Details', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
         </tr>
@@ -30,3 +30,5 @@
 <br>
 
 <%= link_to 'New Appointment', new_appointment_path %>
+
+
