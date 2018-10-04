@@ -21,19 +21,26 @@
 document.addEventListener("turbolinks:load", function() {
     $('.timepicker').timepicker();
     $('.datepicker').datepicker(); 
+        
+    $('.sidenav').sidenav();
+
+    $('.modal').modal();
+    console.log("X:"+Rails.root)
+    
+    $("#search").on("click", function(){
+        $.ajax({
+            type: "GET",
+            url: 'medline.xml',
+            //url: 'https://embraceyourinnerengineer.org/xml/medline.xml',
+            dataType: "xml",
+            success: xmlParser
+        })
+       
+       })
 
   })
 
-$("#search").on("click", function(){
- $.ajax({
-     type: "GET",
-     url: 'medline.xml',
-     //url: 'https://embraceyourinnerengineer.org/xml/medline.xml',
-     dataType: "xml",
-     success: xmlParser
- })
 
-})
 
 function xmlParser(xml){
     $("#terms").append("");
@@ -59,12 +66,7 @@ function xmlParser(xml){
 
 $(document).ready(function(){
             
-        $.ajax({
-            type: "GET",
-            url: 'medline.xml',
-            dataType: "xml",
-            success: xmlParser
-        })
+
 
     })
 
@@ -79,11 +81,7 @@ $(document).ready(function(){
     $('.carousel').carousel(
         { duration: 100,}
     ); 
-    
-    $('.sidenav').sidenav();
 
-    $('.modal').modal();
-    console.log("X:"+Rails.root)
   });
 
   
