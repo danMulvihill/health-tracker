@@ -79,6 +79,9 @@ $(document).ready(function(){
     $('.carousel').carousel(
         { duration: 100,}
     ); 
+    
+    $('.sidenav').sidenav();
+
     $('.modal').modal();
     console.log("X:"+Rails.root)
   });
@@ -90,6 +93,5 @@ function autoplay() {
 }
 
 autoplay()      
-
 
 

@@ -16,6 +16,7 @@
     <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Health-Tracker</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if !current_user %>
         <li><%= link_to "Sign In", new_user_session_path %></li>
@@ -29,6 +30,19 @@
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         <% end %>
       </ul>
+      <ul class="sidenav" id="mobile-demo">
+        <% if !current_user %>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% else %>
+        <li><%= link_to "My Account", user_session_path %></li>
+       
+        <li><%= link_to "Patients", patients_path %></li>
+        <li><%= link_to "Doctors", doctors_path %></li>
+        <li><%= link_to "Appointments", appointments_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% end %>
+       </ul>
     </div>
   </nav>
   <div class="container">
