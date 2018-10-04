@@ -30,7 +30,7 @@ document.addEventListener("turbolinks:load", function() {
     $("#search").on("click", function(){
         $.ajax({
             type: "GET",
-            url: 'medline.xml',
+            url: './medline.xml',
             //url: 'https://embraceyourinnerengineer.org/xml/medline.xml',
             dataType: "xml",
             success: xmlParser
@@ -62,13 +62,6 @@ function xmlParser(xml){
     })
     
 }
-
-
-$(document).ready(function(){
-            
-
-
-    })
 
 
 $(".more").on("click", function(){
