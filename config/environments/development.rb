@@ -28,6 +28,16 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "sandbox6faf4532648141a297523d95c2981b2e.mailgun.org",
+  :user_name => "postmaster@sandbox6faf4532648141a297523d95c2981b2e.mailgun.org",
+  :password => "be0cdf693bf95bd8b3be16c3620e98ef-c8e745ec-6887f756"
+}
+
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
