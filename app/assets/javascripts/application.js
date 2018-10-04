@@ -25,7 +25,7 @@ document.addEventListener("turbolinks:load", function() {
     $('.sidenav').sidenav();
 
     $('.modal').modal();
-    console.log("X:"+Rails.root)
+
     
     $("#search").on("click", function(){
         $.ajax({
@@ -35,43 +35,54 @@ document.addEventListener("turbolinks:load", function() {
             dataType: "xml",
             success: xmlParser
         })
-       
-       })
+    })
+
+    $("#list").on("click", function(){
+        $.ajax({
+            type: "GET",
+            url: 'medline.xml',
+            dataType: "xml",
+            success: xmlList
+        })
+    })
+
 
   })
 
-
+function xmlList(xml){
+    $("#placer").children().remove();
+    $(xml).find("health-topic").each(function(){
+        //$('#terms').append("<ul>")
+        $("#placer").append('<li>'+this.getAttribute('title')+" </li>")
+        //$('#terms').append('</ul>')
+    })
+}
 
 function xmlParser(xml){
-
+    $("#placer").children().remove();
     let searchtext = $("#search-text").val().toLowerCase().trim();
+   
     if (searchtext==""){
-        $("#terms").append("<p>Enter a term to search</p>");
+        $("#placer").append("<p>Enter a term to search</p>");
     }else{
     $(xml).find("health-topic").each(function(){
         let title = this.getAttribute('title').toLowerCase();
         if(title.includes(searchtext)){
-            $("#terms").append('<h2>'+this.getAttribute('title')+" </h2>")
-            $("#terms").append('<div>'+$(this).find("full-summary").text()+'</div')
+            $("#placer").append('<h2>'+this.getAttribute('title')+" </h2>")
+            $("#placer").append('<div>'+$(this).find("full-summary").text()+'</div')
             //$('#terms').append('<div>'+$(this).find("site").text()+'</div>')
-            $('#terms').append("<ul>")
+            $('#placer').append("<ul>")
             x = this.getElementsByTagName("site");
             for (i = 0; i < x.length; i++) {
-                $('#terms ul').append("<li><a href='"+x[i].getAttributeNode("url").nodeValue+"'>"+x[i].getAttributeNode("title").nodeValue +"</a></li>");
+                $('#placer ul').append("<li><a href='"+x[i].getAttributeNode("url").nodeValue+"'>"+x[i].getAttributeNode("title").nodeValue +"</a></li>");
             }
-            $('#terms').append('</ul>')
+            $('#placer').append('</ul>')
             }  
         })
     }
 
     
 }
-
-
-$(".more").on("click", function(){
-    console.log("howdy!")
-    $("#terms").append("test")
-})
 
 
 $(document).ready(function(){
