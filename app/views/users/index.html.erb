@@ -1,8 +1,21 @@
 <% if current_user %>
 <h3>Welcome <%= current_user.email %></h3>
+ <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+ <li><a href="#terms" class="modal-trigger">&#128214; Medical condition terms and research</a></li>
+
+
 <p><%= image_tag("greet.jpg", alt: "greetings") %></p>
 
- <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+
+<div class="modal" id="terms">
+  <div class="container" style="padding-bottom: 15px">
+    <label for="search"></label>
+    <input type='text' id="search-text" name= "search">
+    <input type="button" id="search" value="search">
+  </div>
+</div>
+
+
 <% else %>
 
 
