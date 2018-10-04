@@ -43,11 +43,13 @@ document.addEventListener("turbolinks:load", function() {
 
 
 function xmlParser(xml){
-    $("#terms").append("");
+
     let searchtext = $("#search-text").val().toLowerCase().trim();
+    if (searchtext==""){
+        $("#terms").append("<p>Enter a term to search</p>");
+    }else{
     $(xml).find("health-topic").each(function(){
         let title = this.getAttribute('title').toLowerCase();
-        
         if(title.includes(searchtext)){
             $("#terms").append('<h2>'+this.getAttribute('title')+" </h2>")
             $("#terms").append('<div>'+$(this).find("full-summary").text()+'</div')
@@ -55,11 +57,13 @@ function xmlParser(xml){
             $('#terms').append("<ul>")
             x = this.getElementsByTagName("site");
             for (i = 0; i < x.length; i++) {
-                $('#terms').append("<li><a href='"+x[i].getAttributeNode("url").nodeValue+"'>"+x[i].getAttributeNode("title").nodeValue +"</a></li>");
+                $('#terms ul').append("<li><a href='"+x[i].getAttributeNode("url").nodeValue+"'>"+x[i].getAttributeNode("title").nodeValue +"</a></li>");
             }
             $('#terms').append('</ul>')
-        }   
-    })
+            }  
+        })
+    }
+
     
 }
 

@@ -23,10 +23,10 @@
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% else %>
         <li><%= link_to "My Account", user_session_path %></li>
-       
         <li><%= link_to "Patients", patients_path %></li>
         <li><%= link_to "Doctors", doctors_path %></li>
         <li><%= link_to "Appointments", appointments_path %></li>
+        <li><a href="#terms" class="modal-trigger">&#128214;</a></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         <% end %>
       </ul>
@@ -47,6 +47,13 @@
   </nav>
   <div class="container">
     <%= yield %>
+    <div class="modal" id="terms">
+      <div class="container" style="padding: 20px;">
+        <label for="search"></label>
+        <input type='text' id="search-text" name= "search">
+        <input type="button" id="search" value="search">
+      </div>
+    </div>
   </div>
   </body>
 </html>
