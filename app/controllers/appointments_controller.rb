@@ -25,6 +25,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
       if @appointment.save
+        ModelMailer.create_appointment(@message).deliver
         redirect_to @appointment, notice: 'Appointment made.' 
       else
         render :new 

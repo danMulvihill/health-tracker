@@ -1,0 +1,2 @@
+class AppointmentNotifierMailer < ApplicationMailer
+end
