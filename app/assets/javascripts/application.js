@@ -64,7 +64,7 @@ function xmlParser(xml){
    
     if (searchtext==""){
         $("#placer").append("<p>Enter a term to search</p>");
-    }else{
+    }else if (searchtext){
     $(xml).find("health-topic").each(function(){
         let title = this.getAttribute('title').toLowerCase();
         if(title.includes(searchtext)){
@@ -79,6 +79,8 @@ function xmlParser(xml){
             $('#placer').append('</ul>')
             }  
         })
+    }else{
+        $("#placer").append("<p>No records retrieved.Try browsing through the list</p>")
     }
 
     
