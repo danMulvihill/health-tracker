@@ -51,6 +51,8 @@ GEM
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
+    bootsnap (1.3.2)
+      msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.8.2)
@@ -82,8 +84,6 @@ GEM
       warden (~> 1.2.3)
     erubi (1.7.1)
     execjs (2.7.0)
-    faraday (0.15.3)
-      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -93,7 +93,6 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-    jwt (2.1.0)
     libv8 (6.7.288.46.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -115,8 +114,8 @@ GEM
     mini_racer (0.2.3)
       libv8 (>= 6.3)
     minitest (5.11.3)
+    msgpack (1.2.4)
     multi_json (1.13.1)
-    multipart-post (2.0.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -187,10 +186,6 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    twilio-ruby (5.14.0)
-      faraday (~> 0.9)
-      jwt (>= 1.5, <= 2.5)
-      nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.19)
@@ -212,6 +207,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
@@ -228,7 +224,6 @@ DEPENDENCIES
   selenium-webdriver
   sqlite3
   turbolinks (~> 5)
-  twilio-ruby
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
