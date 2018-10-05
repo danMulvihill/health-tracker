@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'rack-protection"'
 gem 'materialize-sass'
 gem 'devise'
-# gem 'sendgrid-ruby'
+
 # Use ActiveStorage variant
 #  gem 'mini_magick', '~> 4.8'
 
